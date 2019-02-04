@@ -3,7 +3,6 @@
  * FishPig_WordPress by Ben Tideswell
  * https://fishpig.co.uk/
  */
-	
 	use \Magento\Framework\Component\ComponentRegistrar;
 
 	ComponentRegistrar::register(
