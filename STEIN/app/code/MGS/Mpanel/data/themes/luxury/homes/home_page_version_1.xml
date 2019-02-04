@@ -1,0 +1,84 @@
+<home>
+	<static_block>
+		<item>
+			<title>Luxury Owl Slider</title>
+			<identifier>mgs_owl_slider</identifier>
+			<content><![CDATA[<div><img class="img-resposive" src="{{media url="wysiwyg/slider_owl_1.jpg"}}" alt="" /></div><div><img class="img-resposive" src="{{media url="wysiwyg/slider_owl_2.jpg"}}" alt="" /></div><div><img class="img-resposive" src="{{media url="wysiwyg/slider_owl_3.jpg"}}" alt="" /></div>]]></content>
+		</item>
+		<item>
+			<title>Luxury background breadcrumbs </title>
+			<identifier>luxury_bg_breadcrumb</identifier>
+			<content><![CDATA[<p><img src="{{media url="wysiwyg/bg-breadcrumbs.png"}}" alt="" width="1920" height="453" /></p>]]></content>
+		</item>
+		<item>
+			<title>Luxury top seach</title>
+			<identifier>luxury_top_search</identifier>
+			<content><![CDATA[<div class="top-search">{{block class="Magento\\Framework\\View\\Element\\Template" template="Magento_Search::form.mini.phtml"}}</div>]]></content>
+		</item>
+		<item>
+			<title>Luxury Banner Boxed</title>
+			<identifier>luxury_banner_boxed</identifier>
+			<content><![CDATA[<div class="boxed-content padding30">
+<div class="row">
+<div class="col-md-3 col-sm-4 col-xs-12">
+<div class="banner row">
+<div class="col-xs-12 col-xs-half"><span class="title h3">NEW DESIGN SEND HER <br /> YOUR LOVE </span>
+<p class="margin0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, do eiusmod tempor</p>
+<a class="btn btn-default btn-lg margin-top30 margin-bottom30" href="#">SHOP NOW</a></div>
+<div class="col-xs-12 col-xs-half"><a class="banner-img" href="#"><img class="img-responsive" src="{{media url="wysiwyg/banner_shop_1.jpg"}}" alt="" /></a></div>
+</div>
+</div>
+<div class="col-md-6 col-sm-4 col-xs-12">
+<div class="banner row">
+<div class="col-xs-12"><a class="banner-img" href="#"><img class="img-responsive" src="{{media url="wysiwyg/banner_shop_2.jpg"}}" alt="" /></a> <span class="title h3">THE BIGGEST WINTER COLLECTION</span>
+<p class="margin0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam</p>
+<a class="btn btn-default btn-lg margin-top30" href="#">GET IT NOW</a></div>
+</div>
+</div>
+<div class="col-md-3 col-sm-4 col-xs-12">
+<div class="banner last row">
+<div class="col-xs-12 col-xs-half"><span class="title h3">WOMEN'S FASHION MID SEASON SALES </span>
+<p class="margin0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, do eiusmod tempor</p>
+<a class="btn btn-default btn-lg  margin-top30 margin-bottom30" href="#">SHOP NOW</a></div>
+<div class="col-xs-12 col-xs-half"><a class="banner-img" href="#"><img class="img-responsive" src="{{media url="wysiwyg/banner_shop_3.jpg"}}" alt="" /></a></div>
+</div>
+</div>
+</div>
+</div>]]></content>
+		</item>
+		<item>
+			<title>Luxury Featured Product Home 1</title>
+			<identifier>luxury_featured_product_home_1</identifier>
+			<content><![CDATA[<div>{{widget type="Magento\CatalogWidget\Block\Product\ProductsList" title="Featured Products" per_row="4" products_count="8" template="product/widget/content/grid.phtml" conditions_encoded="a:3:[i:1;a:4:[s:4:`type`;s:50:`Magento|CatalogWidget|Model|Rule|Condition|Combine`;s:10:`aggregator`;s:3:`all`;s:5:`value`;s:1:`1`;s:9:`new_child`;s:0:``;]s:4:`1--1`;a:4:[s:4:`type`;s:50:`Magento|CatalogWidget|Model|Rule|Condition|Product`;s:9:`attribute`;s:16:`featured_product`;s:8:`operator`;s:2:`==`;s:5:`value`;s:1:`1`;]s:4:`1--2`;a:4:[s:4:`type`;s:50:`Magento|CatalogWidget|Model|Rule|Condition|Product`;s:9:`attribute`;s:12:`category_ids`;s:8:`operator`;s:2:`==`;s:5:`value`;s:2:`38`;]]"}}</div>]]></content>
+		</item>
+	</static_block>
+	
+	<cms_page>
+		<title>Home Page Version 1</title>
+		<identifier>luxury-home-version-1</identifier>
+		<page_layout>1column</page_layout>
+		<content><![CDATA[<p>{{widget type="MGS\Mpanel\Block\Widget\Slider"}}</p>
+<div class="container">
+<div class="row">
+<div class="col-md-12">{{widget type="Magento\Cms\Block\Widget\Block" template="widget/static_block/default.phtml" block_id="luxury_top_search"}}</div>
+</div>
+</div>
+<div class="container">{{widget type="Magento\Cms\Block\Widget\Block" template="widget/static_block/default.phtml" block_id="luxury_banner_boxed"}}</div>
+<div class="container" style="padding-top: 72px; padding-bottom: 70px;">{{widget type="Magento\Cms\Block\Widget\Block" template="widget/static_block/default.phtml" block_id="luxury_featured_product_home_1"}}</div>
+<div class="parallax" style="padding-top: 70px; padding-bottom: 70px; background-image: url('http://mgs.arrowhitech.net/luxury2//pub/media/wysiwyg/bg_deals.jpg');">
+<div class="container">{{block class="MGS\Mpanel\Block\Products\Deals" products_count="2" product_id="1,3" custom_class="" template="products/deals/special.phtml"}}</div>
+</div>
+<div style="padding-top: 80px; padding-bottom: 50px;">
+<div class="container">
+<div class="row">
+<div class="col-md-4 col-sm-12 col-xs-12 margin-botttom30">{{widget type="Magento\CatalogWidget\Block\Product\ProductsList" category_show="8" title="Special" products_count="2" template="product/widget/content/list.phtml" conditions_encoded="a:2:[i:1;a:4:[s:4:`type`;s:50:`Magento|CatalogWidget|Model|Rule|Condition|Combine`;s:10:`aggregator`;s:3:`all`;s:5:`value`;s:1:`1`;s:9:`new_child`;s:0:``;]s:4:`1--1`;a:4:[s:4:`type`;s:50:`Magento|CatalogWidget|Model|Rule|Condition|Product`;s:9:`attribute`;s:12:`category_ids`;s:8:`operator`;s:2:`==`;s:5:`value`;s:1:`5`;]]"}}</div>
+<div class="col-md-4 col-sm-12 col-xs-12 margin-botttom30">{{widget type="Magento\CatalogWidget\Block\Product\ProductsList" title="Must Have" products_count="2" template="product/widget/content/list.phtml" category_show="6" conditions_encoded="a:2:[i:1;a:4:[s:4:`type`;s:50:`Magento|CatalogWidget|Model|Rule|Condition|Combine`;s:10:`aggregator`;s:3:`all`;s:5:`value`;s:1:`1`;s:9:`new_child`;s:0:``;]s:4:`1--1`;a:4:[s:4:`type`;s:50:`Magento|CatalogWidget|Model|Rule|Condition|Product`;s:9:`attribute`;s:12:`category_ids`;s:8:`operator`;s:2:`==`;s:5:`value`;s:1:`6`;]]"}}</div>
+<div class="col-md-4 col-sm-12 col-xs-12 margin-botttom30">{{widget type="Magento\CatalogWidget\Block\Product\ProductsList" category_show="5" title="New Products" products_count="2" template="product/widget/content/list.phtml" conditions_encoded="a:3:[i:1;a:4:[s:4:`type`;s:50:`Magento|CatalogWidget|Model|Rule|Condition|Combine`;s:10:`aggregator`;s:3:`all`;s:5:`value`;s:1:`1`;s:9:`new_child`;s:0:``;]s:4:`1--1`;a:4:[s:4:`type`;s:50:`Magento|CatalogWidget|Model|Rule|Condition|Product`;s:9:`attribute`;s:12:`category_ids`;s:8:`operator`;s:2:`==`;s:5:`value`;s:1:`5`;]s:4:`1--2`;a:4:[s:4:`type`;s:50:`Magento|CatalogWidget|Model|Rule|Condition|Product`;s:9:`attribute`;s:3:`new`;s:8:`operator`;s:2:`==`;s:5:`value`;s:1:`1`;]]"}}</div>
+</div>
+</div>
+</div>
+<div style="background-color: #fff; padding-top: 62px;">
+<div class="container">{{widget type="MGS\Blog\Block\Widget\Lastest" title="Latest From Blogs" number_of_posts="3" show_thumbnail="1" thumbnail_width="240" thumbnail_height="180" show_short_content="1" limit_characters_short_content="150" view_as="owl_carousel" items="2" navigation="1" template="widget/default.phtml"}}<hr style="margin-bottom: 0; margin-top: 70px;" />{{widget type="MGS\Brand\Block\Widget\Brand" brand_ids="1,2,3,4,5,6" view_as="owl_carousel" items="5" image_width="240" image_height="170" autoplay="1" template="widget/default.phtml"}}</div>
+</div>]]></content>
+	</cms_page>
+</home>

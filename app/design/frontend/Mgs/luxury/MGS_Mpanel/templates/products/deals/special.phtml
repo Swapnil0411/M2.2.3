@@ -1,0 +1,97 @@
+<?php $customClass = $this->getCustomClass(); ?>
+<?php $products = $this->getProductCollection(); ?>
+<?php $to_show = $this->getProductsCount(); ?>
+
+<?php if(count($products) > 0 ): ?>
+	<?php $product_deals_id = []; ?>
+	<?php foreach($products as $_productDeals): ?>
+		<?php $product_deals_id[] = $_productDeals->getId(); ?>
+	<?php endforeach ?>
+	<?php if($this->getData('product_id') != ''): ?>
+		<?php $product_id = $this->getProductByIds(); ?>
+		<?php if(count($product_id) > 1): ?>
+			<div id="deals-show-wiget" class="deals-show-wiget owl-carousel <?php if($customClass != ''): ?> <?php echo $customClass ?><?php endif ?>">
+				<?php foreach($product_id as $_product_id): ?>
+					<div class="item">
+					<?php if(in_array($_product_id, $product_deals_id)): ?>
+						<?php $objectManager = \Magento\Framework\App\ObjectManager::getInstance(); ?>
+						<?php $pdata = $objectManager->create('Magento\Catalog\Model\Product')->load($_product_id); ?>
+						<?php echo $this->getLayout()->createBlock('MGS\Mpanel\Block\Products\Deals')->setProduct($pdata)->setTemplate('MGS_Mpanel::products/deals/item.phtml')->toHtml() ?>
+					<?php else: ?>
+						<div class="alert alert-danger">
+							<div class="alert alert-danger">
+								<?php echo __('Product with Id are %1 does not deals', $_product_id) ?>
+							</div>
+						</div>
+					<?php endif ?>
+					</div>
+				<?php endforeach ?>
+			</div>
+			<script type="text/javascript">
+				require([
+					'jquery',
+					'mgs/owlcarousel'
+					], function(jQuery){
+						(function($) {
+							$("#deals-show-wiget").owlCarousel({
+								items: 1,
+								nav: true,
+								navText: ["<i class='fa fa-angle-left'	></i>","<i class='fa fa-angle-right'></i>"],
+								dots: false,
+								autoplay: false,
+								responsive:{ 0 : {items: 1}, 480 : {items: 1}, 768 : {items: 1}, 991 : {items: 1}, 1200 : {items: 1} }
+							});
+						})(jQuery);
+					});
+			</script>
+		<?php else: ?>
+			<?php $pd_id = $this->getData('product_id'); ?>
+			<div id="deals-show-wiget" class="<?php if($customClass != ''): ?> <?php echo $customClass ?><?php endif ?>">
+				<?php $check_id = false; ?>
+				<?php foreach($products as $_productDeals): ?>
+					<?php if($_productDeals->getId() == $pd_id): ?>
+						<?php $check_id = true; ?>
+						<?php break; ?>
+					<?php endif ?>
+				<?php endforeach ?>
+				<?php if($check_id): ?>
+					<?php $objectManager = \Magento\Framework\App\ObjectManager::getInstance(); ?>
+					<?php $pdata = $objectManager->create('Magento\Catalog\Model\Product')->load($pd_id); ?>
+					<?php echo $this->getLayout()->createBlock('MGS\Mpanel\Block\Products\Deals')->setProduct($pdata)->setTemplate('MGS_Mpanel::products/deals/item.phtml')->toHtml() ?>
+				<?php else: ?>
+					<div class="alert alert-danger"><?php echo __('Product with Id are %1 does not deals', $pd_id) ?></div>
+				<?php endif ?>
+			</div>
+		<?php endif ?>
+	<?php else: ?>
+		<div id="deals-show-wiget" class="deals-show-wiget <?php if($customClass != ''): ?> <?php echo $customClass ?><?php endif ?><?php if(count($products) > 1 ): ?> owl-carousel<?php endif ?>">
+			<?php $i=0; foreach($products as $_productDeals): $i++; ?>
+				<?php if($to_show != '' && $to_show > $i) { break; } ?>
+				<?php echo $this->getLayout()->createBlock('MGS\Mpanel\Block\Products\Deals')->setProduct($_productDeals)->setTemplate('MGS_Mpanel::products/deals/item.phtml')->toHtml() ?>
+			<?php endforeach ?>
+		</div>
+		<?php if(count($products) > 1 ): ?>
+			<script type="text/javascript">
+				require([
+					'jquery',
+					'mgs/owlcarousel'
+					], function(jQuery){
+						(function($) {
+							$("#deals-show-wiget").owlCarousel({
+								items: 1,
+								nav: true,
+								navText: ["<i class='fa fa-angle-left'	></i>","<i class='fa fa-angle-right'></i>"],
+								dots: false,
+								autoplay: false,
+								responsive:{ 0 : {items: 1}, 480 : {items: 1}, 768 : {items: 1}, 991 : {items: 1}, 1200 : {items: 1} }
+							});
+						})(jQuery);
+					});
+			</script>
+		<?php endif ?>
+	<?php endif ?>
+<?php else: ?>
+	<div class="alert alert-danger no-product-display">
+        <p><?php echo __('There are no deals matching the selection') ?></p>
+    </div>
+<?php endif ?>

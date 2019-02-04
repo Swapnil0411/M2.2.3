@@ -1,0 +1,44 @@
+<?php $block = $this->getBlock() ?>
+<?php $mpanel = $this->helper('MGS\Mpanel\Helper\Data'); ?>
+<div class="header-v1 position-abs <?php if ($mpanel->getStoreConfig('mgstheme/general/sticky_menu')): ?>sticky-menu<?php endif; ?>">
+    <div class="middle-header-content">
+        <div class="container">
+            <div class="header-container">            
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-6">
+                        <div class="logo-container"><?php echo $block->getChildHtml('logo') ?></div>
+
+                    </div>
+                    <div class="col-md-9 col-sm-8 col-xs-5 header-menu">
+                        <div class="navbar-collapse">
+                            <?php echo $block->getChildHtml('megamenu') ?>
+                        </div>
+                        <div class="top-links header-top">                    
+                            <?php echo $block->getChildHtml('minicart') ?>
+                            <?php echo $block->getChildHtml('store_language') ?>
+                            <div class="account-dropdown" id="top-links">
+                                <span class="action toggle top-links-trigger" id="top-links-trigger">
+                                    <i class="fa fa-user"></i>
+                                </span>
+                                <div class="dropdown top-links-dropdown" data-mage-init='{"dropdownDialog":{
+                                     "appendTo":"#top-links",
+                                     "triggerTarget":"#top-links-trigger",
+                                     "closeOnMouseLeave":false,
+                                     "triggerClass":"active",
+                                     "parentClass":"active",
+                                     "buttons":null,
+                                     "defaultDialogClass":"dropdown-menu"}}'>  
+                                         <?php echo $block->getChildHtml('top.links') ?>
+                                </div>
+                            </div>    
+                        </div>
+                        <button class="btn btn-responsive-nav btn-inverse">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

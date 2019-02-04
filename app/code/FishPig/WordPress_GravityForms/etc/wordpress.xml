@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<wordpress>
+	<shortcodes>
+		<shortcode id="gravityforms" class="FishPig\WordPress_GravityForms\Model\Shortcode" sortOrder="10" />
+	</shortcodes>
+</wordpress>

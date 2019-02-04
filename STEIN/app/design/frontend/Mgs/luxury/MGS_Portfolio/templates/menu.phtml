@@ -1,0 +1,19 @@
+<?php $menu = $this->getMenu() ?>
+<div class="block portfolio-nav">
+    <div class="title-block">
+        <h4><?php echo __('Portfolio Categories') ?></h4>
+    </div>
+    <div class="block-content">
+
+        <ul>
+            <?php foreach ($menu as $_menu): ?>
+                <?php if ($_menu->getId() == $this->getRequest()->getParam('id')): ?>
+                    <li class=" item current"><strong><?php echo $_menu->getCategoryName() ?></strong></li>
+                <?php else: ?>
+                    <li class=" item"><a href="<?php echo $_menu->getLinkCate(); ?>"><?php echo $_menu->getCategoryName() ?></a></li>
+                    <?php endif ?>
+                <?php endforeach; ?>
+        </ul>
+
+    </div>
+</div>

@@ -1,0 +1,60 @@
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Language switcher template
+ */
+?>
+<?php if (count($block->getStores()) > 1 || $block->getChildHtml('currency')): ?>
+<?php $id = $block->getIdModifier() ? '-' . $block->getIdModifier() : ''?>
+<div class="setting-dropdown" id="setting-dropdown">
+    <span class="action toggle setting-trigger" id="setting-trigger">
+        <i class="fa fa-cog"></i>
+    </span>
+    <div class="dropdown setting-trigger-dropdown" data-mage-init='{"dropdownDialog":{
+                "appendTo":"#setting-dropdown",
+                "triggerTarget":"#setting-trigger",
+                "closeOnMouseLeave": false,
+                "triggerClass":"active",
+                "parentClass":"active",
+                "buttons":null,
+                "defaultDialogClass":"dropdown-menu"}}'>
+        <?php //if(count($block->getStores())>1): ?>
+        <div class="form-language">
+            <span class="title-lg"><?php echo __('Language: ')?>
+                <?php foreach($block->getStores() as $_lang):?>
+                    <?php if($_lang->getId() == $block->getCurrentStoreId()):?>
+                        <span class="active-store"><img src="<?php echo $block->getViewFileUrl('images/flags/'.$block->escapeHtml($_lang->getCode()).'.png');?>"/><?php echo $block->escapeHtml($_lang->getCode()) ?></span>
+                    <?php endif;?>
+                <?php endforeach;?>
+                
+            </span>
+            <ul>
+                <?php foreach ($block->getStores() as $_lang): ?>
+                <?php if($_lang->getId() != $block->getCurrentStoreId()):?>
+                    <li class="view-<?php echo $block->escapeHtml($_lang->getCode()); ?> switcher-option">
+                        <a href="#" data-post='<?php /* @escapeNotVerified */ echo $block->getTargetStorePostData($_lang); ?>'>
+                            <img src="<?php echo $block->getViewFileUrl('images/flags/'.$block->escapeHtml($_lang->getCode()).'.png');?>"/>
+                            <?php echo $block->escapeHtml($_lang->getName()) ?></a>
+                    </li>
+                <?php endif; ?>
+                
+            <?php endforeach; ?>
+                
+            </ul>
+        </div>
+        <?php //else:?>
+        
+        <?php //endif;?>
+        <?php echo $this->getChildHtml('currency')?>
+    </div>
+</div>
+
+<?php endif; ?>

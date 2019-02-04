@@ -1,0 +1,57 @@
+<?php $block = $this->getBlock() ?>
+<div class="footer-v1 footer-container">
+    <section class="top-footer text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-xs-12 col-sm-12 ">
+                    <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('luxury_logo_footer')->toHtml();?>
+                    <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('luxury_info_footer')->toHtml();?>
+                    <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('luxury_social_footer')->toHtml();?>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="middle-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6 middle-block">
+                    <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('luxury_contact_footer')->toHtml();?>
+                    
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4 col-xs-12 middle-block">
+                            <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('luxury_quicklink_footer')->toHtml();?>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12 middle-block">
+                            <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('luxury_our_footer')->toHtml();?>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12 middle-block">
+                            <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('luxury_help_footer')->toHtml();?>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 middle-block">
+                    <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('luxury_tags_footer')->toHtml();?>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="bottom-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('luxury_newsletter_footer')->toHtml();?>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <address class="copy">
+                        <span id="design-footer-copyright-text"><?php /* @escapeNotVerified */ echo $block->getCopyright() ?></span>
+                    </address>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12 pull-right payment">
+                    <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('luxury_payment_footer')->toHtml();?>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

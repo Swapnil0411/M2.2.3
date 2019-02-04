@@ -1,0 +1,29 @@
+<?php
+/**
+ * @category    Fishpig
+ * @package     Fishpig_Wordpress
+ * @license     http://fishpig.co.uk/license.txt
+ * @author      Ben Tideswell <help@fishpig.co.uk>
+ */
+?>
+<?php if ($post = $this->getPost()): ?>
+	<div class="post-view">
+		<div class="post-entry">
+			<h1 class="entry-title">
+				<a href="<?php echo $post->getUrl() ?>" title="<?php echo $this->escapeHtml($post->getName()) ?>">
+					<?php echo $this->escapeHtml($post->getName()) ?>
+				</a>
+			</h1> 
+			<div class="post-meta"> 
+				<div class="post-date post-meta-item entry-meta">
+					<span class="posted-on"><?php echo __('Posted On') ?></span> <?php echo $post->getPostDate() ?> 
+					<span class="byline"><?php echo __('by') ?></span> <a href="<?php echo $post->getUser()->getUrl() ?>"><?php echo $post->getUser() ->getDisplayName() ?></a>
+				</div> 
+			</div>
+			<?php if (($content = trim($post->getContent())) !== ''): ?>
+				<div class="post-content"><?php echo $content ?></div>
+			<?php endif; ?>
+		</div> 
+		<?php /*?><?php echo $this->getChildHtml('comments') ?><?php */?>
+	</div>
+<?php endif; ?>

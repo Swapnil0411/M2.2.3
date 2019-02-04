@@ -1,0 +1,24 @@
+<?php
+/**
+ *
+ */
+?>
+<div class="wp-sidebar">
+    <h2 class="text-uppercase">OUR STORY</h2>
+	<!--<?php echo $this->getChildHtml() ?>-->
+ <ul id="menu-blog-left-menu">
+ <li class="current-menu-item"><a href="http://cartiflydemo.com/parisblog">Paris Blog</a></li>
+ <li><a href="http://pj.clientim.com/in-store-events">In Store Events</a></li>
+ <li><a href="http://pj.clientim.com/meet-the-family">Meet The Family</a></li>
+ <li><a href="http://pj.clientim.com/book-an-appointment">Book An Appointment</a></li>
+ <li><a href="http://pj.clientim.com/why-paris">Why Paris?</a></li>
+ <li><a href="http://pj.clientim.com/jewellery-care-plan">Jewellery Care Plan</a></li>
+ <li><a href="http://pj.clientim.com/shops.html">Find A Store</a></li>
+ <li><a href="http://pj.clientim.com/contact.html">Contact</a></li>
+ <li><a href="http://pj.clientim.com/careers">Careers</a></li>
+ <li><a href="http://pj.clientim.com/ring-cam">Ring Cam</a></li>
+ <li><a href="http://pj.clientim.com/ring-cam-frequently-asked-questions">Ring Cam FAQ</a></li>
+ <li><a href="http://pj.clientim.com/diamond-education">Diamond Education</a></li>
+ <li><a href="http://pj.clientim.com/behind-the-brand">Behind The Brand</a></li>
+</ul>
+</div>

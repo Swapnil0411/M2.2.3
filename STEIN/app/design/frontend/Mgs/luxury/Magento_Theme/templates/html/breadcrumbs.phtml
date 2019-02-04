@@ -1,0 +1,71 @@
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php if ($crumbs && is_array($crumbs)) : ?>
+<?php
+$bg_image = $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('luxury_bg_breadcrumb')->toHtml();?>
+<?php if($bg_image != null):?>
+<?php preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $bg_image, $matches); ?>
+    <?php if(!empty($matches[1][0])):?>
+        <div class="breadcrumbs" style="background-image:url(<?php echo $matches[1][0]?>)">         
+    <?php else:?>
+        <div class="breadcrumbs">   
+    <?php endif;?>
+<?php else: ?>
+<div class="breadcrumbs">
+<?php endif;?>
+
+<div class="container">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <?php foreach ($crumbs as $crumbName => $crumbInfo) : ?>
+                                <?php if($crumbInfo['last']):?>
+                            <h1 class="text-center text-uppercase"><?php echo $crumbInfo['label'];?></h1>
+                            <?php endif;?>
+                                <?php endforeach;?>
+				<ol>
+					<?php foreach ($crumbs as $crumbName => $crumbInfo) : ?>
+						<?php if ($crumbInfo['link']) : ?>
+							<li class="item <?php /* @escapeNotVerified */ echo $crumbName ?>">
+								<a href="<?php /* @escapeNotVerified */ echo $crumbInfo['link'] ?>" title="<?php echo $block->escapeHtml($crumbInfo['title']) ?>">
+									<?php echo $block->escapeHtml($crumbInfo['label']) ?>
+								</a>
+                                                            <span>| </span>
+							</li>
+						<?php elseif ($crumbInfo['last']) : ?>
+							<li class="active">
+								<?php echo $block->escapeHtml($crumbInfo['label']) ?>
+							</li>
+						<?php else: ?>
+							<li class="item">
+								<?php echo $block->escapeHtml($crumbInfo['label']) ?>
+							</li>
+						<?php endif; ?>
+						
+					<?php endforeach; ?>
+				</ol>
+			</div>
+		</div>
+	</div>
+    
+</div>
+<?php if($this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('luxury_top_search')->toHtml()):?>
+            <div class="top-search-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                                <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('luxury_top_search')->toHtml();?>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php endif;?>
+<?php endif; ?>

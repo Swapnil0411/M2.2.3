@@ -1,0 +1,406 @@
+<install>
+	<!-- STATIC BLOCKS -->
+	<static_block>
+		<item>
+			<title>Luxury Custom Static Block Sidebar</title>
+			<identifier>luxury_custom_static_block_sidebar</identifier>
+			<content><![CDATA[<div class="service-box margin-bottom15">
+<div class="icon rotate">&nbsp;</div>
+<div class="text"><span class="h4">FREE SHIPPING</span></div>
+</div>
+<div class="service-box margin-bottom15">
+<div class="icon rotate">&nbsp;</div>
+<div class="text"><span class="h4">100% MONEY BACK</span></div>
+</div>
+<div class="service-box margin-bottom15">
+<div class="icon rotate">&nbsp;</div>
+<div class="text"><span class="h4">ONLINE SUPPORT 24/7</span></div>
+</div>]]></content>
+		</item>
+		<item>
+			<title>MGS Panel Product Static Block Top</title>
+			<identifier>mgs_panel_product_static_block_top</identifier>
+			<content><![CDATA[<p><span class="h4" style="color: #222; margin-top: 0px;">CUSTOM STATIC BLOCK TOP</span></p>
+<p>Sed arcu velit, lacinia quis scelerisque sit amet, fringilla eu nibh. In in metus vel lacus fringilla mattis vitae at augue. Nullam malesuada, urna at scelerisque consequat, enim libero commodo enim, in malesuada purus erat ut ipsum.</p>]]></content>
+		</item>
+		<item>
+			<title>MGS Panel Product Static Block Bottom</title>
+			<identifier>mgs_panel_product_static_block_bottom</identifier>
+			<content><![CDATA[<p><span class="h4" style="color: #222; margin-top: 0px;">CUSTOM STATIC BLOCK BOTTOM</span></p>
+<p>Sed arcu velit, lacinia quis scelerisque sit amet, fringilla eu nibh. In in metus vel lacus fringilla mattis vitae at augue. Nullam malesuada, urna at scelerisque consequat, enim libero commodo enim, in malesuada purus erat ut ipsum.</p>]]></content>
+		</item>
+		<item>
+			<title>Luxury Custom New Customer</title>
+			<identifier>luxury_custom_new_customer</identifier>
+			<content><![CDATA[<div class="margin-top40 padding-top10">
+<h3 class="title-step text-uppercase">Sign Up Today And You'll Be Able To :</h3>
+<ul class="custom-create-acc">
+<li><span class="icon fa fa-check-square-o">&nbsp;</span>Speed your way through the checkout.</li>
+<li><span class="icon fa fa-check-square-o">&nbsp;</span>Track your orders easily.</li>
+<li><span class="icon fa fa-check-square-o">&nbsp;</span>Keep a record of all your purchases.</li>
+</ul>
+</div>]]></content>
+		</item>
+		<item>
+			<title>Luxury social footer</title>
+			<identifier>luxury_social_footer</identifier>
+			<content><![CDATA[<ul class="social">
+<li><a href="#"><em class="fa fa-facebook">&nbsp;</em></a></li>
+<li><a href="#"><em class="fa fa-twitter">&nbsp;</em></a></li>
+<li><a href="#"><em class="fa fa-linkedin">&nbsp;</em></a></li>
+<li><a href="#"><em class="fa fa-rss">&nbsp;</em></a></li>
+<li><a href="#"><em class="fa fa-dribbble">&nbsp;</em></a></li>
+</ul>]]></content>
+		</item>
+		<item>
+			<title>Luxury payment footer</title>
+			<identifier>luxury_payment_footer</identifier>
+			<content><![CDATA[<ul>
+<li><a href="#"><img src="{{media url="wysiwyg/icon-paypal.png"}}" alt="" width="46" height="27" /></a></li>
+<li><a href="#"><img src="{{media url="wysiwyg/icon-discover.png"}}" alt="" /></a></li>
+<li><a href="#"><img src="{{media url="wysiwyg/icon-mastercard.png"}}" alt="" /></a></li>
+<li><a href="#"><img src="{{media url="wysiwyg/icon-visa.png"}}" alt="" /></a></li>
+</ul>]]></content>
+		</item>
+		<item>
+			<title>Luxury newsletter footer</title>
+			<identifier>luxury_newsletter_footer</identifier>
+			<content><![CDATA[<div>{{block class="Magento\\Newsletter\\Block\\Subscribe" template="Magento_Newsletter::subscribe.phtml"}}</div>]]></content>
+		</item>
+		<item>
+			<title>Luxury tags footer</title>
+			<identifier>luxury_tags_footer</identifier>
+			<content><![CDATA[<div class="block footer-tags">
+<div class="block-title"><span class="h4">Product tags</span></div>
+<div class="block-content">
+<div class="block block-tags">
+<div class="tagcloud"><a href="#">Collection Men</a> <a href="#">Collection Women</a> <a href="#">Fashion</a> <a href="#">Gallery</a> <a href="#">Good</a> <a href="#">New</a> <a href="#">Perfect</a> <a href="#">Really</a> <a href="#">Top</a></div>
+</div>
+</div>
+</div>]]></content>
+		</item>
+		<item>
+			<title>Luxury help footer</title>
+			<identifier>luxury_help_footer</identifier>
+			<content><![CDATA[<div class="footer-help">
+<div class="block-title"><span class="h4">Help</span></div>
+<div class="block-content">
+<ul>
+<li><a href="#">Help &amp; Contact</a></li>
+<li><a href="#">Shipping &amp; taxes</a></li>
+<li><a href="#">Return policy</a></li>
+<li><a href="#">Affiliates</a></li>
+<li><a href="#">Legal Notice</a></li>
+</ul>
+</div>
+</div>]]></content>
+		</item>
+		<item>
+			<title>Luxury our footer</title>
+			<identifier>luxury_our_footer</identifier>
+			<content><![CDATA[<div class="footer-our block">
+<div class="block-title"><span class="h4">Our offers</span></div>
+<div class="block-content">
+<ul>
+<li><a href="#">New collection</a></li>
+<li><a href="#">Best sellers</a></li>
+<li><a href="#">Manufacturers</a></li>
+<li><a href="#">New products</a></li>
+<li><a href="#">Specail products</a></li>
+</ul>
+</div>
+</div>]]></content>
+		</item>
+		<item>
+			<title>Luxury quicklink footer</title>
+			<identifier>luxury_quicklink_footer</identifier>
+			<content><![CDATA[<div class="footer-quicklink block">
+<div class="block-title"><span class="h4">Quick link</span></div>
+<div class="block-content">
+<ul>
+<li><a href="#">My account</a></li>
+<li><a href="#">Order history</a></li>
+<li><a href="#">Wish list</a></li>
+<li><a href="#">Store locator</a></li>
+<li><a href="#">Site map<br /></a></li>
+</ul>
+</div>
+</div>]]></content>
+		</item>
+		<item>
+			<title>Luxury contact footer</title>
+			<identifier>luxury_contact_footer</identifier>
+			<content><![CDATA[<div class="footer-contacts">
+<div class="block-title"><span class="h4"><span class="title">Contacts us</span></span></div>
+<div class="block-content">
+<ul>
+<li><em class="fa fa-map-marker">&nbsp;</em> <span class="text">LUXURY London Oxford Street 02 <br />United Kingdom. </span></li>
+<li><em class="fa fa-envelope">&nbsp;</em> <span class="text">emailluxury@gmail.com<br />emailsupport@gmail.com</span></li>
+<li><em class="fa fa-phone">&nbsp;</em> <span class="text">(+92) 3456 7890<br />(+92) 1234 5678</span></li>
+</ul>
+</div>
+</div>]]></content>
+		</item>
+		<item>
+			<title>luxury info footer</title>
+			<identifier>luxury_info_footer</identifier>
+			<content><![CDATA[<p>Lorem ipsum dolor sit amete, consectetur adipisicing sed do eiusmod tempor icididunt ut labore etel dolore magna aliqua.<br /> enim adminim veniam, done quisnostrud exercitation ullommodo.</p>]]></content>
+		</item>
+		<item>
+			<title>Luxury logo footer</title>
+			<identifier>luxury_logo_footer</identifier>
+			<content><![CDATA[<p><img src="{{media url="wysiwyg/footer-logo.png"}}" alt="" /></p>]]></content>
+		</item>
+	</static_block>
+
+
+	<!-- CMS PAGES (NOT HOMEPAGES) -->
+	<cms_page>
+		<item>
+			<title>Luxury 404 Not Found</title>
+			<identifier>luxury-no-route</identifier>
+			<content_heading>Whoops, our bad...</content_heading>
+			<page_layout>1column</page_layout>
+			<content><![CDATA[<div class="error-content text-center">
+<div class="title-content"><span class="h1">404 PAGE</span></div>
+<p class="text">The page you are looking for does not exist. <br /> Return to the <a href="{{config path="web/unsecure/base_url"}}">home page.</a></p>
+</div>]]></content>
+		</item>
+		<item>
+			<title>Luxury About us</title>
+			<identifier>luxury-about-us</identifier>
+			<content_heading>About us</content_heading>
+			<page_layout>1column</page_layout>
+			<content><![CDATA[<div class="about-banner"><span class="h4">LUXURY SAY HI !</span> <span class="h1">WE ARE THE <span style="color: #b18ade;">LUXURY</span> THEME </span> <a class="btn btn-default btn-lg" href="#">VIEW DETAIL</a></div>
+<div class="section" style="background-color: #fff; padding-top: 64px; padding-bottom: 50px;">
+<div class="container">
+<div class="row">
+<div class="col-sm-6 col-xs-12">
+<div class="title-block">
+<h4>Our Skills</h4>
+</div>
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
+</div>
+<div class="col-sm-6 col-xs-12">
+<ul class="chart-ab">
+<li><span class="title">Photoshop</span>
+<div class="chart-parent">
+<div class="chart" style="width: 80%;"><span class="number">80%</span></div>
+</div>
+</li>
+<li><span class="title">Html</span>
+<div class="chart-parent">
+<div class="chart" style="width: 90%;"><span class="number">90%</span></div>
+</div>
+</li>
+<li><span class="title">Css</span>
+<div class="chart-parent">
+<div class="chart" style="width: 85%;"><span class="number">85%</span></div>
+</div>
+</li>
+<li><span class="title">Code</span>
+<div class="chart-parent">
+<div class="chart" style="width: 95%;"><span class="number">95%</span></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="section" style="padding-top: 62px; padding-bottom: 40px;">
+<div class="container">
+<div class="row">
+<div class="col-xs-12">
+<div class="title-content">
+<h3>MEET THE TEAM</h3>
+</div>
+<div class="testimonials-center">
+<div class="profile-contents">
+<div class="profile-grid row">
+<div class="carousel-container profiles">
+<div class="item col-md-3 col-sm-6 col-xs-12">
+<div class="profile-content">
+<div class="profile-top"><img src="{{media url="wysiwyg/profile_1.jpg"}}" alt="" />
+<div class="social-links">
+<ul class="social-connected">
+<li><a href="#" target="_blank"><em class="fa fa-facebook">&nbsp;</em></a></li>
+<li><a href="#" target="_blank"><em class="fa fa-twitter">&nbsp;</em></a></li>
+<li><a href="#" target="_blank"><em class="fa fa-linkedin">&nbsp;</em></a></li>
+<li><a href="#" target="_blank"><em class="fa fa-instagram">&nbsp;</em></a></li>
+<li><a href="#" target="_blank"><em class="fa fa-google-plus">&nbsp;</em></a></li>
+</ul>
+</div>
+</div>
+<div class="profile-desc"><a class="profile-name h5" href="#">David Miller</a>
+<p class="job-design">CEO</p>
+</div>
+</div>
+</div>
+<div class="item col-md-3 col-sm-6 col-xs-12">
+<div class="profile-content">
+<div class="profile-top"><img src="{{media url="wysiwyg/profile_2.jpg"}}" alt="" />
+<div class="social-links">
+<ul class="social-connected">
+<li><a href="#" target="_blank"><em class="fa fa-facebook">&nbsp;</em></a></li>
+<li><a href="#" target="_blank"><em class="fa fa-twitter">&nbsp;</em></a></li>
+<li><a href="#" target="_blank"><em class="fa fa-linkedin">&nbsp;</em></a></li>
+<li><a href="#" target="_blank"><em class="fa fa-instagram">&nbsp;</em></a></li>
+<li><a href="#" target="_blank"><em class="fa fa-google-plus">&nbsp;</em></a></li>
+</ul>
+</div>
+</div>
+<div class="profile-desc"><a class="profile-name h5" href="#">David Miller</a>
+<p class="job-design">CEO</p>
+</div>
+</div>
+</div>
+<div class="item col-md-3 col-sm-6 col-xs-12">
+<div class="profile-content">
+<div class="profile-top"><img src="{{media url="wysiwyg/profile_3.jpg"}}" alt="" />
+<div class="social-links">
+<ul class="social-connected">
+<li><a href="#" target="_blank"><em class="fa fa-facebook">&nbsp;</em></a></li>
+<li><a href="#" target="_blank"><em class="fa fa-twitter">&nbsp;</em></a></li>
+<li><a href="#" target="_blank"><em class="fa fa-linkedin">&nbsp;</em></a></li>
+<li><a href="#" target="_blank"><em class="fa fa-instagram">&nbsp;</em></a></li>
+<li><a href="#" target="_blank"><em class="fa fa-google-plus">&nbsp;</em></a></li>
+</ul>
+</div>
+</div>
+<div class="profile-desc"><a class="profile-name h5" href="#">David Miller</a>
+<p class="job-design">CEO</p>
+</div>
+</div>
+</div>
+<div class="item col-md-3 col-sm-6 col-xs-12">
+<div class="profile-content">
+<div class="profile-top"><img src="{{media url="wysiwyg/profile_4.jpg"}}" alt="" />
+<div class="social-links">
+<ul class="social-connected">
+<li><a href="#" target="_blank"><em class="fa fa-facebook">&nbsp;</em></a></li>
+<li><a href="#" target="_blank"><em class="fa fa-twitter">&nbsp;</em></a></li>
+<li><a href="#" target="_blank"><em class="fa fa-linkedin">&nbsp;</em></a></li>
+<li><a href="#" target="_blank"><em class="fa fa-instagram">&nbsp;</em></a></li>
+<li><a href="#" target="_blank"><em class="fa fa-google-plus">&nbsp;</em></a></li>
+</ul>
+</div>
+</div>
+<div class="profile-desc"><a class="profile-name h5" href="#">David Miller</a>
+<p class="job-design">CEO</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" style="background-color: #fff; padding-top: 62px; padding-bottom: 45px;">
+<div class="container">
+<div class="row">
+<div class="col-xs-12">
+<div class="title-content">
+<h3><span>OUR SERVICE</span></h3>
+</div>
+</div>
+<div class="col-md-4 col-sm-6 col-xs-12 col-sm-half">
+<div class="service-inline" style="margin-bottom: 25px;"><span class="icon fa fa-desktop"><span class="icon fa fa-desktop">&nbsp;</span></span>
+<h5 class="title">CLEAN DESIGN</h5>
+<p class="content">Get Free Shipping on all orders over $75 and free returns to our UK returns centre! Items are dispatched from the US and will arrive in 5-8 days.</p>
+</div>
+</div>
+<div class="col-md-4 col-sm-6 col-xs-12 col-sm-half">
+<div class="service-inline" style="margin-bottom: 25px;"><span class="icon fa fa-wrench"><span class="icon fa fa-wrench">&nbsp;</span></span>
+<h5 class="title">FREE UPDATE &amp; SUPPORT</h5>
+<p class="content">Get Free Shipping on all orders over $75 and free returns to our UK returns centre! Items are dispatched from the US and will arrive in 5-8 days.</p>
+</div>
+</div>
+<div class="col-md-4 col-sm-6 col-xs-12 col-sm-half">
+<div class="service-inline" style="margin-bottom: 25px;"><span class="icon fa fa-user-times"><span class="icon fa fa-user-times">&nbsp;</span></span>
+<h5 class="title">LOADED WITH POWER</h5>
+<p class="content">Get Free Shipping on all orders over $75 and free returns to our UK returns centre! Items are dispatched from the US and will arrive in 5-8 days.</p>
+</div>
+</div>
+<div class="col-md-4 col-sm-6 col-xs-12 col-sm-half">
+<div class="service-inline" style="margin-bottom: 25px;"><span class="icon fa fa-cloud-upload"><span class="icon fa fa-cloud-upload">&nbsp;</span></span>
+<h5 class="title">COMPLETELY CUSTOMIZABLE</h5>
+<p class="content">Get Free Shipping on all orders over $75 and free returns to our UK returns centre! Items are dispatched from the US and will arrive in 5-8 days.</p>
+</div>
+</div>
+<div class="col-md-4 col-sm-6 col-xs-12 col-sm-half">
+<div class="service-inline" style="margin-bottom: 25px;"><span class="icon fa fa-cloud-download"><span class="icon fa fa-cloud-download">&nbsp;</span></span>
+<h5 class="title">CHOOSE THE PRODUCT YOU LOVE</h5>
+<p class="content">Get Free Shipping on all orders over $75 and free returns to our UK returns centre! Items are dispatched from the US and will arrive in 5-8 days.</p>
+</div>
+</div>
+<div class="col-md-4 col-sm-6 col-xs-12 col-sm-half">
+<div class="service-inline" style="margin-bottom: 25px;"><span class="icon fa fa-sliders"><span class="icon fa fa-sliders">&nbsp;</span></span>
+<h5 class="title">STYLE FOR EVERY BUDGET</h5>
+<p class="content">Get Free Shipping on all orders over $75 and free returns to our UK returns centre! Items are dispatched from the US and will arrive in 5-8 days.</p>
+</div>
+</div>
+</div>
+</div>
+</div>]]></content>
+		</item>
+	</cms_page>
+	
+	<!-- SET DEFAULT SETTING -->
+	<theme_setting>
+		<general>
+			<width>width1200</width>
+			<header>header_1</header>
+			<footer>footer_1</footer>
+			<sticky_menu>1</sticky_menu>
+			<back_to_top>1</back_to_top>
+			<popup_newsletter>1</popup_newsletter>
+		</general>
+		<fonts>
+			<default_font><![CDATA[Open+Sans]]></default_font>
+			<h1><![CDATA[Oswald]]></h1>
+			<h2><![CDATA[Oswald]]></h2>
+			<h3><![CDATA[Oswald]]></h3>
+			<h4><![CDATA[Oswald]]></h4>
+			<h5><![CDATA[Oswald]]></h5>
+			<h6><![CDATA[Oswald]]></h6>
+			<btn><![CDATA[Oswald]]></btn>
+			<price><![CDATA[Oswald]]></price>
+			<menu><![CDATA[Oswald]]></menu>
+		</fonts>
+		<custom_style>
+			<style><![CDATA[]]></style>
+		</custom_style>
+		<banner_slider>
+			<slider_tyle>2</slider_tyle>
+			<identifier_block><![CDATA[mgs_owl_slider]]></identifier_block>
+			<banner_owl_loop>1</banner_owl_loop>
+			<banner_owl_dot>0</banner_owl_dot>
+			<banner_owl_auto>1</banner_owl_auto>
+			<banner_owl_nav>0</banner_owl_nav>
+			<banner_owl_speed><![CDATA[6000]]></banner_owl_speed>
+		</banner_slider>
+	</theme_setting>
+	
+	<panel_setting>
+		<catalog>
+			<product_per_row>3</product_per_row>
+			<max_width_image>400</max_width_image>
+			<max_width_image_detail>600</max_width_image_detail>
+			<sale_label><![CDATA[Sale]]></sale_label>
+			<new_label><![CDATA[New]]></new_label>
+			<picture_ratio>3</picture_ratio>
+		</catalog>
+		<form_mini_search>
+			<show_categories>1</show_categories>
+		</form_mini_search>
+		<contact_google_map>
+			<display_google_map>1</display_google_map>
+			<address_google_map><![CDATA[New York]]></address_google_map>
+			<html_google_map><![CDATA[<div class="infobox"><div class="title-block"><h4>Luxury</h4></div><span>New York</span><br>NY, United States <br>+0123456789<p></p></div>]]></html_google_map>
+		</contact_google_map>
+	</panel_setting>
+</install>

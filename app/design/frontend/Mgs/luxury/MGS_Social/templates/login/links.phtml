@@ -1,0 +1,20 @@
+<?php $helper = $this->helper('MGS\Social\Helper\Data'); ?>
+<?php if ($helper->getConfig('general_settings/active') && $helper->getConfig('general_settings/show_social_login_on_header_links') && !$helper->checkLoggedIn()): ?>
+    <div class="social-login-options" id="social-toplink">
+        <span class="action toggle social-toplink-trigger" id="social-toplink-trigger">
+            <i class="fa fa-users"></i>
+        </span>
+        <div class="dropdown top-links-dropdown" data-mage-init='{"dropdownDialog":{
+                                     "appendTo":"#social-toplink",
+                                     "triggerTarget":"#social-toplink-trigger",
+                                     "closeOnMouseLeave":false,
+                                     "triggerClass":"active",
+                                     "parentClass":"active",
+                                     "buttons":null,
+                                     "defaultDialogClass":"dropdown-menu"}}'> 
+        <?php echo $block->getChildHtml('social.login.header.links.facebook'); ?>
+        <?php echo $block->getChildHtml('social.login.header.links.google'); ?>
+        <?php echo $block->getChildHtml('social.login.header.links.twitter'); ?>
+        </div>
+    </div>
+<?php endif; ?>

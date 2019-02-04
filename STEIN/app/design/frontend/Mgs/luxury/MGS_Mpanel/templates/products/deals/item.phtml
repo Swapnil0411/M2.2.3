@@ -1,0 +1,115 @@
+<?php $_product = $this->getProduct() ?>
+<?php if($_product->getId()): ?>
+	<?php $_helper = $this->helper('Magento\Catalog\Helper\Output');
+	$themeHelper = $this->helper('MGS\Mpanel\Helper\Data');
+	$themeSettings = $themeHelper->getThemeSettings(); 
+	$image_sm = 'category_page_grid'; ?>
+	<?php $now = date('m/d/y h:i:s A',strtotime($this->getCurrentDate())) ?>
+	<?php $endTime = str_replace(' 00:00:00','',$_product->getSpecialToDate()) ?>
+	<?php $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::SHORT_VIEW; ?>
+	<div class="deals-item">
+		<div class="row">
+			<div class="col-md-5 col-sm-6 col-xs-12">
+				<div class="deals-img <?php if(count($_product->getMediaGalleryImages()) > 1): ?>is-slider<?php endif ?>">
+					<div style="display: block;" id="img-deals-slider<?php echo $_product->getId(); ?>" class=" <?php if(count($_product->getMediaGalleryImages()) > 1): ?>owl-carousel<?php endif ?> img-deals-slider owl-theme">
+						<?php $_productNameStripped = $this->stripTags($_product->getName(), null, true); ?>
+						<?php 	$_imagehelper = $this->helper('Magento\Catalog\Helper\Image');
+								$size = $themeHelper->getImageSize();
+								$productImage = $_imagehelper->init($_product, $image_sm)->resize($size['width'], $size['height'])->getUrl();
+								?>
+						<?php if(count($_product->getMediaGalleryImages()) > 1): ?>
+							<?php foreach ($_product->getMediaGalleryImages() as $image): ?>
+								<div class="item-img">
+									<a href="<?php echo $_product->getProductUrl() ?>">
+										<img src="<?php echo $image->getUrl(); ?>" alt="<?php echo $_productNameStripped ?>" class="img-responsive"/>
+									</a>
+								</div>
+							<?php endforeach ?>
+						<?php else: ?>
+							<div class="item-img">
+								<a href="<?php echo $_product->getProductUrl() ?>">
+									<img src="<?php echo $productImage; ?>" alt="<?php echo $_productNameStripped ?>" class="img-responsive"/>
+								</a>
+							</div>
+						<?php endif ?>
+					</div>
+					<?php if(count($_product->getMediaGalleryImages()) > 1): ?>
+						<script type="text/javascript">
+							require([
+								'jquery',
+								'mgs/owlcarousel'
+								], function(jQuery){
+									(function($) {
+										$("#img-deals-slider<?php echo $_product->getId(); ?>").owlCarousel({
+											
+											items: 1,
+											loop: true,
+											nav: false,
+											navText: ["<i class='fa fa-angle-left'	></i>","<i class='fa fa-angle-right'></i>"],
+											dots: true,
+											autoplay: false,
+											responsive:{ 0 : {items: 1}, 480 : {items: 1}, 768 : {items: 1}, 991 : {items: 1}, 1200 : {items: 1} }
+										});
+									})(jQuery);
+								});
+						</script>
+					<?php endif ?>
+				</div>
+			</div>
+			<div class="col-md-7 col-sm-6 col-xs-12">
+				<div class="deals-info padding-top20">
+					<div class="deal-timer">
+						<ul id="deal-timer-<?php echo $_product->getId(); ?>" class="countdown"></ul>
+					</div>
+					<div class="clear"></div>
+					<div class="product-name">
+						<a class="h1" href="<?php echo $_product->getProductUrl() ?>" title ="<?php echo $_product->getName(); ?>"><?php echo $_product->getName(); ?></a>
+					</div>
+					<div class="short_description">
+						<?php /* @escapeNotVerified */ echo $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?>
+					</div>
+					<div class="price-show"><?php /* @escapeNotVerified */ echo $this->getProductPrice($_product) ?></div>
+					<div class="actions-primary">
+						<?php if ($_product->isSaleable()): ?>
+							<?php $url = $this->getAddToCartUrl($_product) ?>
+							<form data-role="tocart-form" action="<?php echo $url; ?>" method="post">
+								<input type="hidden" name="product" value="<?php echo $_product->getId(); ?>">
+								<input type="hidden" name="uenc" value="<?php echo $this->getEncodedUrl($url) ?>">
+								<?php echo $block->getBlockHtml('formkey')?>
+								<button type="submit"
+										title="<?php echo $block->escapeHtml(__('Add to Cart')); ?>"
+										class="btn btn-default btn-lg">
+									<span><?php /* @escapeNotVerified */ echo __('Add to Cart') ?></span>
+								</button>
+							</form>
+						<?php else: ?>
+							<?php if ($_product->getIsSalable()): ?>
+								<div class="btn btn-default btn-lg stock available"><span><?php /* @escapeNotVerified */ echo __('In stock') ?></span></div>
+							<?php else: ?>
+								<div class="btn btn-default btn-lg stock unavailable"><span><?php /* @escapeNotVerified */ echo __('Out of stock') ?></span></div>
+							<?php endif; ?>
+						<?php endif; ?>
+						<a class="btn btn-default btn-lg" href="<?php echo $_product->getProductUrl() ?>">
+							<?php echo __('View Detail') ?>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var dthen<?php echo $_product->getId(); ?> = new Date("<?php echo Date("m/d/y", strtotime($endTime)).' 11:59:59 PM'; ?>");
+		start = "<?php echo $now; ?>";
+		start_date = Date.parse(start);
+		var dnow<?php echo $_product->getId(); ?> = new Date(start_date);
+		ddiff = new Date((dthen<?php echo $_product->getId(); ?>)-(dnow<?php echo $_product->getId(); ?>));
+		gsecs<?php echo $_product->getId(); ?> = Math.floor(ddiff.valueOf()/1000);
+
+		var iid<?php echo $_product->getId(); ?> = "deal-timer-<?php echo $_product->getId(); ?>";
+		CountBack(gsecs<?php echo $_product->getId(); ?>,"deal-timer-<?php echo $_product->getId(); ?>", <?php echo $_product->getId(); ?>);
+	</script>
+<?php else: ?>
+	<div class="alert alert-danger no-product-display">
+        <p><?php echo __('There are no product matching the selection') ?></p>
+    </div>
+<?php endif ?>

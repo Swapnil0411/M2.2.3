@@ -1,0 +1,43 @@
+<?php $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$posts = $objectManager->create('FishPig\WordPress\Model\ResourceModel\Post\Collection')
+        ->addPostTypeFilter('post')
+        ->setOrderByPostDate()
+        ->addIsViewableFilter()
+        ->setPageSize(3)
+        ->load();
+?>
+<section class="home-blog-section"> 
+    <div class="container">
+        <h2 class="subtitle text-center">Blog</h2>
+        <div class="row">
+<?php if (count($posts) > 0): ?>
+                <?php
+                $count = count($posts);
+                foreach ($posts as $post):
+                    $postNewDate = date("M d, Y", strtotime($post->getPostDate()));
+                    ?>                      
+                    <div class="col-md-7 blog-col">
+
+                        <div class="home-blog-post">
+        <?php if ($image = $post->getFeaturedImage()): ?>
+                                <a href="<?php echo $post->getUrl() ?>">
+                                    <img src="<?php echo $image->getAvailableImage() ?>" />
+                                </a>
+        <?php endif; ?>
+                            <div class="blog-dtls">
+                                <a href="<?php echo $post->getUrl() ?>">
+                                    <h3><?php echo $this->escapeHtml($post->getPostTitle()) ?></h3>
+                                </a>
+                                <div class="blog-date"><?php echo $postNewDate; ?></div>
+                                <div class="blog-read-more"><a href="<?php echo $post->getUrl() ?>">Read More</a></div> 
+                            </div>
+                        </div>
+
+                        <div class="clearfix"></div>
+                    </div> 
+    <?php endforeach; ?>
+            <?php endif; ?>               
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</section>

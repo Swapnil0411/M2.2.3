@@ -1,0 +1,169 @@
+<?php
+$helper = $this->helper('MGS\Blog\Helper\Data');
+$collection = $block->getPostCollection();
+?>
+<?php $title = $this->getConfig('title'); ?>
+<?php if ($title) { ?>
+	<div class="title-content">
+		<h3 class="title"><?php echo $title ?></h3>
+	</div>
+<?php } ?>
+<?php if (count($collection)): ?>
+<?php
+$blockId = rand() . time();
+$numberOfPosts = $this->getConfig('number_of_posts');
+$showThumbnail = $this->getConfig('show_thumbnail');
+$width = $this->getConfig('thumbnail_width', 240);
+$height = $this->getConfig('thumbnail_height', 180);
+$showShortContent = $this->getConfig('show_short_content');
+$viewAs = $this->getConfig('view_as');
+$customClass = $this->getConfig('custom_class');
+?>
+<div class="block widget widget-latest <?php if ($customClass): ?><?php echo $customClass; ?><?php endif; ?>">
+	<?php if ($viewAs == 'default'): ?>
+		<div class="block-content">
+			<ul class="row default widget-latest-<?php echo $blockId; ?>">
+				<?php foreach ($collection as $post) { ?>
+					<li class="item item col-md-6 col-sm-6 col-xs-12 blog-view-container">
+						<div class="row">
+							<div class="col-md-6 col-sm-6 col-xs-12 col-xs-half">
+								<div class="latest-post-img">
+									<a class="blog_link_img" href="<?php echo $post->getPostUrlWithNoCategory(); ?>" title="<?php echo $post->getTitle(); ?>"><img class="img-responsive" src="<?php echo $post->getThumbnailUrl(); ?>" alt="<?php echo $post->getTitle(); ?>"/></a>
+								</div>
+							</div>
+							<div class="col-md-6 col-sm-6 col-xs-12 col-xs-half padding-left10">
+								<div class="latest-post-decs">
+									<div class="post-info h6">
+										<span class="day-desc">
+											<span class="icon fa fa-calendar"></span>
+											<span class="day"><?php echo date('d', strtotime($block->formatDate($post->getCreatedAt(), \IntlDateFormatter::MEDIUM, false))) ?></span>
+											<span class="month"><?php echo date('M', strtotime($block->formatDate($post->getCreatedAt(), \IntlDateFormatter::MEDIUM, false))) ?></span>
+										</span>
+										<?php  if ($post->getUpdatedByUser()){ $author = $post->getUpdatedByUser();
+											}else { $author = $post->getUser(); } ?>
+										<span class="user-author">
+											<span class="icon fa fa-user"></span>
+											<span class="name"><?Php echo $author ?></span>
+										</span>
+										<?php if ($helper->getConfig('comment_settings/enabled')): ?>
+											<?php $many = ''; ?>
+											<?php if($post->getCommentCount() > 1){ $many = 's'; } ?>
+											<span class="comments-post">
+												<span class="icon fa fa-comment"></span>
+												<a href="<?php echo $post->getPostUrlWithNoCategory(); ?>#comment-box" class="comments"><?php echo __('%1 Comment%2', $post->getCommentCount(),$many) ?></a>
+											</span>
+										<?php endif; ?>
+									</div>
+									<div class="latest-name">
+										<h5 class="text-uppercase">
+											<a href="<?php echo $post->getPostUrlWithNoCategory(); ?>">
+												<?php echo $post->getTitle() ?>
+											</a>
+										</h5>
+									</div>
+									<?php if ($showShortContent) { ?>
+										<p class="short-content"><?php echo substr($post->getShortContent(), 0, $this->getConfig('limit_characters_short_content')); ?><?php echo "..." ?></p>
+									<?php } ?>
+									<a class="btn btn-default btn-lg read-more" href="<?php echo $post->getPostUrlWithNoCategory(); ?>"><?php echo __('View Detail') ?></a>
+								</div>
+							</div>
+						</div>
+					</li>
+				<?php } ?>
+			</ul>
+		</div>
+    <?php endif; ?>
+    <?php if ($viewAs == 'owl_carousel'): ?>
+		<div class="block-content">
+			<ul class="owl-carousel row mgs-carousel-<?php echo $blockId; ?>">
+				<?php foreach ($collection as $post) { ?>
+					<li class="item">
+						<div class="row">
+							<div class="col-md-6 col-sm-6 col-xs-12 col-xs-half">
+								<div class="latest-post-img">
+									<a class="blog_link_img" href="<?php echo $post->getPostUrlWithNoCategory(); ?>" title="<?php echo $post->getTitle(); ?>"><img class="img-responsive" src="<?php echo $post->getThumbnailUrl(); ?>" alt="<?php echo $post->getTitle(); ?>"/></a>
+								</div>
+							</div>
+							<div class="col-md-6 col-sm-6 col-xs-12 col-xs-half padding-left10">
+								<div class="latest-post-decs">
+									<div class="post-info h6">
+										<span class="day-desc">
+											<span class="icon fa fa-calendar"></span>
+											<span class="day"><?php echo date('d', strtotime($block->formatDate($post->getCreatedAt(), \IntlDateFormatter::MEDIUM, false))) ?></span>
+											<span class="month"><?php echo date('M', strtotime($block->formatDate($post->getCreatedAt(), \IntlDateFormatter::MEDIUM, false))) ?></span>
+										</span>
+										<?php  if ($post->getUpdatedByUser()){ $author = $post->getUpdatedByUser();
+											}else { $author = $post->getUser(); } ?>
+										<span class="user-author">
+											<span class="icon fa fa-user"></span>
+											<span class="name"><?Php echo $author ?></span>
+										</span>
+										<?php if ($helper->getConfig('comment_settings/enabled')): ?>
+											<?php $many = ''; ?>
+											<?php if($post->getCommentCount() > 1){ $many = 's'; } ?>
+											<span class="comments-post">
+												<span class="icon fa fa-comment"></span>
+												<a href="<?php echo $post->getPostUrlWithNoCategory(); ?>#comment-box" class="comments"><?php echo __('%1 Comment%2', $post->getCommentCount(),$many) ?></a>
+											</span>
+										<?php endif; ?>
+									</div>
+									<div class="latest-name">
+										<h5 class="text-uppercase">
+											<a href="<?php echo $post->getPostUrlWithNoCategory(); ?>">
+												<?php echo $post->getTitle() ?>
+											</a>
+										</h5>
+									</div>
+									<?php if ($showShortContent) { ?>
+										<p class="short-content"><?php echo substr($post->getShortContent(), 0, $this->getConfig('limit_characters_short_content')); ?><?php echo "..." ?></p>
+									<?php } ?>
+									<a class="btn btn-default btn-lg read-more" href="<?php echo $post->getPostUrlWithNoCategory(); ?>"><?php echo __('View Detail') ?></a>
+								</div>
+							</div>
+						</div>
+					</li>
+				<?php } ?>
+			</ul>
+		</div>
+        <?php
+        if ($this->getConfig('autoplay')) {
+            $autoplay = 'true';
+        } else {
+            $autoplay = 'false';
+        }
+        if ($this->getConfig('stop_on_hover')) {
+            $stopOnHover = 'true';
+        } else {
+            $stopOnHover = 'false';
+        }
+        if ($this->getConfig('navigation')) {
+            $navigation = 'true';
+        } else {
+            $navigation = 'false';
+        }
+        ?>
+        <script type="text/javascript">
+            require([
+                'jquery',
+                'mgs/owlcarousel'
+            ], function ($) {
+                var owl = $('.mgs-carousel-<?php echo $blockId ?>');
+                owl.owlCarousel({
+                    items: <?php echo $this->getConfig('items', 5); ?>,
+                    autoPlay: <?php echo $autoplay; ?>,
+                    stopOnHover: <?php echo $stopOnHover; ?>,
+                    nav: <?php echo $navigation; ?>,
+					navText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
+					dots: false,
+					responsive:{ 0 : {items: 1}, 480 : {items: 1}, 768 : {items: 2}, 991 : {items: 2}, 1200 : {items: <?php echo $this->getConfig('items', 5); ?>} }
+                });
+            });
+        </script>
+    <?php endif; ?>
+</div>
+<?php else: ?>
+    <div class="message info empty">
+        <div><?php echo __('Have no posts.') ?></div>
+    </div>
+<?php endif; ?>
+

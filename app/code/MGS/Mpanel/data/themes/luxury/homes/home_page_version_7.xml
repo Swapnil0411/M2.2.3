@@ -1,0 +1,192 @@
+<home>
+	<static_block>
+		<item>
+			<title>Luxury Service Sample 01</title>
+			<identifier>luxury_service_sample_01</identifier>
+			<content><![CDATA[<div class="service-box">
+<div class="icon rotate"><em class="fa fa-truck">&nbsp;</em></div>
+<div class="text"><span class="h4">FREE SHIPPING ON OVER ORDER $500</span></div>
+</div>]]></content>
+		</item>
+		<item>
+			<title>Luxury Service Sample 02</title>
+			<identifier>luxury_service_sample_02</identifier>
+			<content><![CDATA[<div class="service-box">
+<div class="icon rotate"><em class="fa fa-reply">&nbsp;</em></div>
+<div class="text"><span class="h4">100% MONEY BACK</span></div>
+</div>]]></content>
+		</item>
+		<item>
+			<title>Luxury Service Sample 03</title>
+			<identifier>luxury_service_sample_03</identifier>
+			<content><![CDATA[<div class="service-box">
+<div class="icon rotate"><em class="fa fa-comments">&nbsp;</em></div>
+<div class="text"><span class="h4">ONLINE SUPPORT 24/7</span></div>
+</div>]]></content>
+		</item>
+		<item>
+			<title>Luxury Home 7 Category Landing</title>
+			<identifier>home_7_category_landing</identifier>
+			<content><![CDATA[<div class="item">
+<div class="img-category"><a href="#"><img class="img-responsive" src="http://mgs.arrowhitech.net/luxury2/pub/media/wysiwyg/cat_bag.jpg" alt="" /></a></div>
+<div class="categories-desc"><a href="#"><span class="h5" style="font-size: 16px;">BAGS</span></a> <span class="h6" style="font-size: 12px;">( 20 PRODUCTS )</span></div>
+</div>
+<div class="item">
+<div class="img-category"><a href="#"><img class="img-responsive" src="http://mgs.arrowhitech.net/luxury2/pub/media/wysiwyg/cat_shoes.jpg" alt="" /></a></div>
+<div class="categories-desc"><a href="#"><span class="h5" style="font-size: 16px;">WOMEN'S SHOES</span></a> <span class="h6" style="font-size: 12px;">( 25 PRODUCTS )</span></div>
+</div>
+<div class="item">
+<div class="img-category"><a href="#"><img class="img-responsive" src="http://mgs.arrowhitech.net/luxury2/pub/media/wysiwyg/cat_kid.jpg" alt="" /></a></div>
+<div class="categories-desc"><a href="#"><span class="h5" style="font-size: 16px;">KID</span></a> <span class="h6" style="font-size: 12px;">( 27 PRODUCTS )</span></div>
+</div>
+<div class="item">
+<div class="img-category"><a href="#"><img class="img-responsive" src="http://mgs.arrowhitech.net/luxury2/pub/media/wysiwyg/cat_glass.jpg" alt="" /></a></div>
+<div class="categories-desc"><a href="#"><span class="h5" style="font-size: 16px;">GLASS</span></a> <span class="h6" style="font-size: 12px;">( 70 PRODUCTS )</span></div>
+</div>
+<div class="item">
+<div class="img-category"><a href="#"><img class="img-responsive" src="http://mgs.arrowhitech.net/luxury2/pub/media/wysiwyg/cat_shoes_men.jpg" alt="" /></a></div>
+<div class="categories-desc"><a href="#"><span class="h5" style="font-size: 16px;">MEN'S SHOES</span></a> <span class="h6" style="font-size: 12px;">( 64 PRODUCTS )</span></div>
+</div>
+<div class="item">
+<div class="img-category"><a href="#"><img class="img-responsive" src="http://mgs.arrowhitech.net/luxury2/pub/media/wysiwyg/cat_sport.jpg" alt="" /></a></div>
+<div class="categories-desc"><a href="#"><span class="h5" style="font-size: 16px;">SPORT</span></a> <span class="h6" style="font-size: 12px;">( 19 PRODUCTS )</span></div>
+</div>
+<div class="item">
+<div class="img-category"><a href="#"><img class="img-responsive" src="http://mgs.arrowhitech.net/luxury2/pub/media/wysiwyg/cat_shoes_kid.jpg" alt="" /></a></div>
+<div class="categories-desc"><a href="#"><span class="h5" style="font-size: 16px;">KID'S SHOES</span></a> <span class="h6" style="font-size: 12px;">( 35 PRODUCTS )</span></div>
+</div>]]></content>
+		</item>
+		<item>
+			<title>Home 7 Owl Slider</title>
+			<identifier>home_7_owl_slider</identifier>
+			<content><![CDATA[<div><img class="img-responsive" src="{{media url="wysiwyg/home7_owl_slider_1.jpg"}}" alt="" /></div>
+<div><img class="img-responsive" src="{{media url="wysiwyg/home7_owl_slider_2.jpg"}}" alt="" /></div>
+<div><img class="img-responsive" src="{{media url="wysiwyg/home7_owl_slider_3.jpg"}}" alt="" /></div>]]></content>
+		</item>
+	</static_block>
+	
+	<cms_page>
+		<title>Home Page Version 7</title>
+		<identifier>luxury-home-version-7</identifier>
+		<page_layout>1column</page_layout>
+		<content><![CDATA[<div>{{widget type="MGS\Mpanel\Block\Widget\Slider"}}</div>
+<!--SERVICE BOX -->
+<div class="container margin-top40 margin-bottom10">
+<div class="row">
+<div class="col-md-4 col-sm-6 col-xs-12 margin-bottom30">{{widget type="Magento\Cms\Block\Widget\Block" template="widget/static_block/default.phtml" block_id="luxury_service_sample_01"}}</div>
+<div class="col-md-4 col-sm-6 col-xs-12 margin-bottom30">{{widget type="Magento\Cms\Block\Widget\Block" template="widget/static_block/default.phtml" block_id="luxury_service_sample_02"}}</div>
+<div class="col-md-4 col-sm-12 col-xs-12 margin-bottom30">{{widget type="Magento\Cms\Block\Widget\Block" template="widget/static_block/default.phtml" block_id="luxury_service_sample_03"}}</div>
+</div>
+</div>
+<!--BANNER BOX -->
+<div class="container promo-boxed">
+<div class="row">
+<div class="col-md-8 col-sm-12 col-xs-12 padding-right0">{{widget type="MGS\Mpanel\Block\Widget\SliderOwl" custom_class="owl-slider-img" owl_auto="1" owl_speed="6000" owl_dot="1" per_row="1" block_id="boxed_slider_home_5"}}</div>
+<div class="col-md-4 col-sm-12 col-xs-12 padding-left0">
+<div class="boxed-right">
+<div class="row">
+<div class="col-md-12 col-sm-6 col-xs-12 col-xs-half margin-bottom20">{{widget type="MGS\Promobanners\Block\Widget\Banner" banner_id="fashion_shoes" template="banner.phtml"}}</div>
+<div class="col-md-12 col-sm-6 col-xs-12 col-xs-half">{{widget type="MGS\Promobanners\Block\Widget\Banner" banner_id="fashion_bag" template="banner.phtml"}}</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--PRODUCT TABS -->
+<div style="padding-top: 62px; padding-bottom: 70px;">
+<div class="container">{{widget per_row="4" type="Magento\CatalogWidget\Block\Product\ProductsList" title="The Trendy Products" products_count="8" template="product/widget/content/grid_tab.phtml" conditions_encoded="a:2:[i:1;a:4:[s:4:`type`;s:50:`Magento|CatalogWidget|Model|Rule|Condition|Combine`;s:10:`aggregator`;s:3:`all`;s:5:`value`;s:1:`1`;s:9:`new_child`;s:0:``;]s:4:`1--1`;a:4:[s:4:`type`;s:50:`Magento|CatalogWidget|Model|Rule|Condition|Product`;s:9:`attribute`;s:12:`category_ids`;s:8:`operator`;s:2:`==`;s:5:`value`;s:14:`23, 24, 25, 26`;]]"}}</div>
+</div>
+<!--CATEGORY OWL-->
+<div class="text-colour-white parallax" style="background-image: url('http://magesolution.com/luxury/media/mpanel/background/bg_categories_wg.jpg'); padding-top: 62px; padding-bottom: 58px;">
+<div class="container">
+<div class="title-content">
+<h3>Our Categories</h3>
+</div>
+{{widget type="MGS\Mpanel\Block\Widget\SliderOwl" custom_class="categories-slider" owl_auto="1" owl_speed="3000" owl_dot="1" owl_loop="1" per_row="4" per_row_md="4" per_row_sm="3" per_row_xs="2" per_row_xsm="1" block_id="home_7_category_landing"}}</div>
+</div>
+<!--PRODUCT LIST -->
+<div style="padding-top: 80px; padding-bottom: 50px;">
+<div class="container">
+<div class="row">
+<div class="col-md-4 col-sm-12 col-xs-12 margin-bottom30">{{widget type="Magento\CatalogWidget\Block\Product\ProductsList" category_show="8" title="Special" products_count="2" template="product/widget/content/list.phtml" conditions_encoded="a:2:[i:1;a:4:[s:4:`type`;s:50:`Magento|CatalogWidget|Model|Rule|Condition|Combine`;s:10:`aggregator`;s:3:`all`;s:5:`value`;s:1:`1`;s:9:`new_child`;s:0:``;]s:4:`1--1`;a:4:[s:4:`type`;s:50:`Magento|CatalogWidget|Model|Rule|Condition|Product`;s:9:`attribute`;s:12:`category_ids`;s:8:`operator`;s:2:`==`;s:5:`value`;s:1:`5`;]]"}}</div>
+<div class="col-md-4 col-sm-12 col-xs-12 margin-bottom30">{{widget type="Magento\CatalogWidget\Block\Product\ProductsList" title="Must Have" products_count="2" template="product/widget/content/list.phtml" category_show="6" conditions_encoded="a:2:[i:1;a:4:[s:4:`type`;s:50:`Magento|CatalogWidget|Model|Rule|Condition|Combine`;s:10:`aggregator`;s:3:`all`;s:5:`value`;s:1:`1`;s:9:`new_child`;s:0:``;]s:4:`1--1`;a:4:[s:4:`type`;s:50:`Magento|CatalogWidget|Model|Rule|Condition|Product`;s:9:`attribute`;s:12:`category_ids`;s:8:`operator`;s:2:`==`;s:5:`value`;s:1:`6`;]]"}}</div>
+<div class="col-md-4 col-sm-12 col-xs-12 margin-bottom30">{{widget type="Magento\CatalogWidget\Block\Product\ProductsList" category_show="5" title="New Products" products_count="2" template="product/widget/content/list.phtml" conditions_encoded="a:3:[i:1;a:4:[s:4:`type`;s:50:`Magento|CatalogWidget|Model|Rule|Condition|Combine`;s:10:`aggregator`;s:3:`all`;s:5:`value`;s:1:`1`;s:9:`new_child`;s:0:``;]s:4:`1--1`;a:4:[s:4:`type`;s:50:`Magento|CatalogWidget|Model|Rule|Condition|Product`;s:9:`attribute`;s:12:`category_ids`;s:8:`operator`;s:2:`==`;s:5:`value`;s:1:`5`;]s:4:`1--2`;a:4:[s:4:`type`;s:50:`Magento|CatalogWidget|Model|Rule|Condition|Product`;s:9:`attribute`;s:3:`new`;s:8:`operator`;s:2:`==`;s:5:`value`;s:1:`1`;]]"}}</div>
+</div>
+</div>
+</div>
+<!--BLOG-->
+<div style="background-color: #fff; padding-top: 62px;">
+<div class="container">{{widget type="MGS\Blog\Block\Widget\Lastest" title="Latest From Blogs" number_of_posts="3" show_thumbnail="1" thumbnail_width="240" thumbnail_height="180" show_short_content="1" limit_characters_short_content="150" view_as="owl_carousel" items="2" navigation="1" template="widget/default.phtml"}} <!--BRANDS--><hr style="margin-bottom: 0; margin-top: 70px;" />{{widget type="MGS\Brand\Block\Widget\Brand" brand_ids="1,2,3,4,5,6" view_as="owl_carousel" items="5" image_width="240" image_height="170" autoplay="1" template="widget/default.phtml"}}</div>
+</div>]]></content>
+	</cms_page>
+	
+	<promo_banner>
+		<item>
+			<title>Fashion Shoes</title>
+			<filename>/b/a/banner_shop_3_2.jpg</filename>
+			<url><![CDATA[]]></url>
+			<button><![CDATA[]]></button>
+			<text_align>top-left</text_align>
+			<content><![CDATA[<div class="title-block">
+<span style="font-size: 20px;" class="h3">FASHION SHOES
+</span></div>]]></content>
+			<effect>zoom</effect>
+			<custom_class><![CDATA[]]></custom_class>
+			<status>1</status>
+			<identifier>fashion_shoes</identifier>
+		</item>
+		<item>
+			<title>Fashion Bag</title>
+			<filename>/b/a/banner_shop_3_3.jpg</filename>
+			<url><![CDATA[]]></url>
+			<button><![CDATA[]]></button>
+			<text_align>top-left</text_align>
+			<content><![CDATA[<div class="title-block">
+<span style="font-size: 20px;" class="h3">FASHION BAGS
+</span></div>]]></content>
+			<effect>zoom</effect>
+			<custom_class><![CDATA[]]></custom_class>
+			<status>1</status>
+			<identifier>fashion_bag</identifier>
+		</item>
+	</promo_banner>
+	
+	<theme_setting>
+		<general>
+			<header>header_2</header>
+		</general>
+		<custom_style>
+			<style><![CDATA[@media (max-width: 479px) {
+.promo-boxed .boxed-right { padding-bottom: 20px; }
+}
+.header .setting-dropdown .action, .header .account-dropdown .action, .header .minicart-wrapper .action, .header .social-login-options .action {
+color: #6a6a6a;
+}
+@media(max-width: 991px) {
+.header .navigation a.level0 {
+color:#fff !important;
+}}
+.header-v2.sticky-menu .sticky-logo .logo-container img {
+    height: 45px;
+    width: 120px
+  }]]></style>
+		</custom_style>
+		<banner_slider>
+			<identifier_block><![CDATA[home_7_owl_slider]]></identifier_block>
+			<banner_owl_dot>1</banner_owl_dot>
+		</banner_slider>
+	</theme_setting>
+	<color_setting>
+		<header>
+			<header_custom>1</header_custom>
+			<background_color><![CDATA[#2d2d2d]]></background_color>
+			<text_color><![CDATA[#ffffff]]></text_color>
+			<link_color><![CDATA[#ffffff]]></link_color>
+			<link_hover_color><![CDATA[#b18ade]]></link_hover_color>
+			<middle_background><![CDATA[#ffffff]]></middle_background>
+			<menu_background><![CDATA[#ffffff]]></menu_background>
+			<lv1_color><![CDATA[#5d5d5d]]></lv1_color>
+			<lv1_color_hover><![CDATA[#252525]]></lv1_color_hover>
+		</header>
+	</color_setting>
+</home>

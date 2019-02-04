@@ -1,0 +1,77 @@
+<?php $customClass = $this->getCustomClass() ?>
+<?php if($this->hasData('title')): ?>
+	<div class="title-content">
+		<h3><?php echo $this->getData('title') ?></h3>
+	</div>
+<?php endif ?>
+<div class="testimonial-widget testimonial-container <?php if($customClass): ?><?php echo $customClass ?><?php endif ?>">
+	<?php $_testimonialCollection = $this->getCollection(); ?>
+	<?php $_collectionSize = count($_testimonialCollection) ?>
+	<?php $_columnCount = 1 ?>
+	<?php if($this->hasData('row')): ?>
+		<?php $_columnCount = $this->getData('row') ?>
+	<?php endif ?>
+	
+
+	<?php if (!count($_testimonialCollection)): ?>
+		<div class="page messages">
+			<div class="message info empty">
+				<div><?php /* @escapeNotVerified */ echo __('We can\'t find testimonials matching the selection.') ?></div>
+			</div>
+		</div>
+	<?php else: ?>
+		<div class="slider-for col-md-10 col-md-push-1 col-sm-12 col-xs-12">
+			<?php foreach($_testimonialCollection as $_item): ?>
+				<div class="testimonial-content text-center">
+					<div class="client-say">
+						<p><?php echo $_item->getContent() ?></p>
+					</div>
+				</div>
+			<?php endforeach ?>
+		</div>
+		<div class="slider-nav col-md-4 col-md-push-4  col-sm-6 col-sm-push-3 col-xs-12">
+			<?php foreach($_testimonialCollection as $_item): ?>
+				<?php if($this->getAvatarUrl($_item->getAvatar())): ?>
+					<div class="thumbnail-author text-center">							
+						<div class="img">
+							<img class="img-responsive" src="<?php echo $this->getAvatarUrl($_item->getAvatar()) ?>" alt=""></div>
+						<div class="name-author">
+							<p class="name text-uppercase"><strong>______&nbsp;<?php echo $_item->getName() ?>&nbsp;______</strong></p>
+							<p class="possition"><span><?php echo $_item->getInformation() ?></span></p>	
+						</div>							
+					</div>
+				<?php endif;?>
+			<?php endforeach ?>
+		</div>
+		<div class="clear"></div>
+		<script type="text/javascript">
+			require([
+				'jquery',
+				'testimonials/slider'
+			], function(jQuery){
+				(function($) {
+					$(document).ready(function() {
+						$('.slider-for').slick({
+							slidesToShow: 1,
+							slidesToScroll: 1,
+							arrows: false,
+							fade: false,
+							swipeToSlide: true,
+							asNavFor: '.slider-nav'
+						});
+						$('.slider-nav').slick({
+							slidesToShow: 3,
+							slidesToScroll: 1,
+							asNavFor: '.slider-for',
+							centerMode: true,
+							dots: false,
+							arrows: false,
+							focusOnSelect: true,
+							centerPadding: '0px'
+						});
+					});
+				})(jQuery);
+			});
+		</script>
+	<?php endif ?>
+</div>

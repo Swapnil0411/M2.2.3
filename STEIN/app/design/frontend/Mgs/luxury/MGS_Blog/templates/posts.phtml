@@ -1,0 +1,66 @@
+<?php
+$helper = $this->helper('MGS\Blog\Helper\Data');
+$collection = $block->getCollection();
+$showThumbnail = $this->getConfig('general_settings/show_thumbnail');
+if ($this->getConfig('general_settings/thumbnail_width') != '') {
+    $width = $this->getConfig('general_settings/thumbnail_width');
+} else {
+    $width = 240;
+}
+if ($this->getConfig('general_settings/thumbnail_height') != '') {
+    $height = $this->getConfig('general_settings/thumbnail_height');
+} else {
+    $height = 180;
+}
+?>
+<?php if (!count($collection)): ?>
+	<div class="page  messages">
+		<div class="message message-danger info empty danger">
+			<div><?php echo __('Have no posts.') ?></div>
+		</div>
+	</div>
+<?php else: ?>
+    <div class="blog-list">
+        <?php $i = 0; foreach ($collection as $post): $i++; ?>
+            <div class="blog-post postWrapper">
+				<div class="row">
+					<?php if ($showThumbnail): ?>
+						<div class="col-md-6 col-sm-6 col-xs-12 col-sm-half">
+							<div class="post-img">
+								<a class="images-post" href="<?php echo $post->getPostUrlWithNoCategory(); ?>">
+									<img alt="<?php echo $post->getTitle(); ?>" class="img-responsive" src="<?php echo $post->getThumbnailUrl(); ?>">
+								</a>
+								<div class="post-info">
+									<div class="day-desc">
+										<strong class="number h3"><?php echo date('d', strtotime($block->formatDate($post->getCreatedAt(), \IntlDateFormatter::MEDIUM, false))) ?></strong>
+										<span class="text h6 text-uppercase"><?php echo date('M', strtotime($block->formatDate($post->getCreatedAt(), \IntlDateFormatter::MEDIUM, false))) ?></span>
+									</div>
+									<?php if ($this->getConfig('comment_settings/enabled')): ?>
+										<?php $manyCm = ""; ?><?php if($post->getCommentCount() > 1){ $manyCm = "s"; } ?>
+										<div class="timer">
+											<strong class="number h3"><?php echo $post->getCommentCount(); ?></strong>
+											<span class="text h6"><?php echo __('Comment%1', $manyCm) ?></span>
+										</div>
+									<?php endif; ?>
+									<div class="clear"></div>
+								</div>
+							</div>
+						</div>
+					<?php endif; ?>
+					<div class="col-md-6 col-sm-6 col-xs-12 col-sm-half">
+						<div class="post-desc">
+							<h5><a title="<?php echo $post->getTitle(); ?>" href="<?php echo $post->getPostUrlWithNoCategory(); ?>"><?php echo $post->getTitle(); ?></a></h5>
+						</div>
+						<?php if ($post->getShortContent()): ?>
+							<div class="postContent">
+								<?php echo $post->getShortContent(); ?>
+							</div>
+						<?php endif; ?> 
+					</div>
+				</div>
+            </div>
+			<?php if($i != count($collection)): ?><hr /><?php endif ?>
+        <?php endforeach; ?>
+    </div>
+    <div class="blog-post-list-toolbar"><?php echo $block->getPagerHtml(); ?></div>
+<?php endif; ?>

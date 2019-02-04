@@ -1,0 +1,156 @@
+<home>
+	<static_block>
+		<item>
+			<title>Luxury Home 5 Top Search</title>
+			<identifier>luxury_home_5_top_search</identifier>
+			<content><![CDATA[<div class="top-search search-boxed">{{block class="Magento\\Framework\\View\\Element\\Template" template="Magento_Search::form.mini.phtml"}}</div>]]></content>
+		</item>
+		<item>
+			<title>Luxury Home 5 Boxed Slider</title>
+			<identifier>boxed_slider_home_5</identifier>
+			<content><![CDATA[<div><img class="img-responsive" src="{{media url="wysiwyg/slider_owl_5_2.jpg"}}" alt="" /></div>
+<div><img class="img-responsive" src="{{media url="wysiwyg/slider_owl_5_3.jpg"}}" alt="" /></div>
+<div><img class="img-responsive" src="{{media url="wysiwyg/slider_owl_5_1.jpg"}}" alt="" /></div>]]></content>
+		</item>
+	</static_block>
+	
+	<cms_page>
+		<title>Home Page Version 5</title>
+		<identifier>luxury-home-version-5</identifier>
+		<page_layout>1column</page_layout>
+		<content><![CDATA[<!--TOP SEARCH -->
+<div class="container" style="padding-top: 40px;">{{widget type="Magento\Cms\Block\Widget\Block" template="widget/static_block/default.phtml" block_id="luxury_home_5_top_search"}}</div>
+<!--BANNER BOX -->
+<div class="container promo-boxed">
+<div class="row">
+<div class="col-md-8 col-sm-12 col-xs-12 padding-right0">{{widget type="MGS\Mpanel\Block\Widget\Slider"}}</div>
+<div class="col-md-4 col-sm-12 col-xs-12 padding-left0">
+<div class="boxed-right">
+<div class="row">
+<div class="col-md-12 col-sm-6 col-xs-12 col-xs-half margin-bottom20">{{widget type="MGS\Promobanners\Block\Widget\Banner" banner_id="fashion_shoes" template="banner.phtml"}}</div>
+<div class="col-md-12 col-sm-6 col-xs-12 col-xs-half">{{widget type="MGS\Promobanners\Block\Widget\Banner" banner_id="fashion_bag" template="banner.phtml"}}</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="boxed-bottom">
+<div class="row">
+<div class="col-sm-6 col-xs-12  col-sm-half  padding-right10">{{widget type="MGS\Promobanners\Block\Widget\Banner" banner_id="fashion_watch" template="banner.phtml"}}</div>
+<div class="col-sm-6 col-xs-12  col-sm-half  padding-left10">{{widget type="MGS\Promobanners\Block\Widget\Banner" banner_id="fashion_glass" template="banner.phtml"}}</div>
+</div>
+</div>
+</div>
+<!--PRODUCT TABS -->
+<div style="padding-top: 62px; padding-bottom: 70px;">
+<div class="container">{{widget per_row="4" type="Magento\CatalogWidget\Block\Product\ProductsList" title="The Trendy Products" products_count="8" template="product/widget/content/grid_tab.phtml" conditions_encoded="a:2:[i:1;a:4:[s:4:`type`;s:50:`Magento|CatalogWidget|Model|Rule|Condition|Combine`;s:10:`aggregator`;s:3:`all`;s:5:`value`;s:1:`1`;s:9:`new_child`;s:0:``;]s:4:`1--1`;a:4:[s:4:`type`;s:50:`Magento|CatalogWidget|Model|Rule|Condition|Product`;s:9:`attribute`;s:12:`category_ids`;s:8:`operator`;s:2:`==`;s:5:`value`;s:14:`23, 24, 25, 26`;]]"}}</div>
+</div>
+<!--TESTIMONIALS -->
+<div class="text-colour-white" style="background-image: url('http://mgs.arrowhitech.net/luxury2/pub/media/wysiwyg/bg_testimonials.jpg'); background-repeat: no-repeat; background-size: cover; padding-top: 62px; padding-bottom: 40px;">{{block class="MGS\Testimonial\Block\Testimonial" testimonials_count="4" row="1" title="What Client's Say?" custom_class="testimonial-slide" nav="true" dots="true" autoplay="false" template="slide.phtml"}}</div>
+<!--PRODUCT LIST -->
+<div style="padding-top: 80px; padding-bottom: 50px;">
+<div class="container">
+<div class="row">
+<div class="col-md-4 col-sm-12 col-xs-12 margin-bottom30">{{widget type="Magento\CatalogWidget\Block\Product\ProductsList" category_show="8" title="Special" products_count="2" template="product/widget/content/list.phtml" conditions_encoded="a:2:[i:1;a:4:[s:4:`type`;s:50:`Magento|CatalogWidget|Model|Rule|Condition|Combine`;s:10:`aggregator`;s:3:`all`;s:5:`value`;s:1:`1`;s:9:`new_child`;s:0:``;]s:4:`1--1`;a:4:[s:4:`type`;s:50:`Magento|CatalogWidget|Model|Rule|Condition|Product`;s:9:`attribute`;s:12:`category_ids`;s:8:`operator`;s:2:`==`;s:5:`value`;s:1:`5`;]]"}}</div>
+<div class="col-md-4 col-sm-12 col-xs-12 margin-bottom30">{{widget type="Magento\CatalogWidget\Block\Product\ProductsList" title="Must Have" products_count="2" template="product/widget/content/list.phtml" category_show="6" conditions_encoded="a:2:[i:1;a:4:[s:4:`type`;s:50:`Magento|CatalogWidget|Model|Rule|Condition|Combine`;s:10:`aggregator`;s:3:`all`;s:5:`value`;s:1:`1`;s:9:`new_child`;s:0:``;]s:4:`1--1`;a:4:[s:4:`type`;s:50:`Magento|CatalogWidget|Model|Rule|Condition|Product`;s:9:`attribute`;s:12:`category_ids`;s:8:`operator`;s:2:`==`;s:5:`value`;s:1:`6`;]]"}}</div>
+<div class="col-md-4 col-sm-12 col-xs-12 margin-bottom30">{{widget type="Magento\CatalogWidget\Block\Product\ProductsList" category_show="5" title="New Products" products_count="2" template="product/widget/content/list.phtml" conditions_encoded="a:3:[i:1;a:4:[s:4:`type`;s:50:`Magento|CatalogWidget|Model|Rule|Condition|Combine`;s:10:`aggregator`;s:3:`all`;s:5:`value`;s:1:`1`;s:9:`new_child`;s:0:``;]s:4:`1--1`;a:4:[s:4:`type`;s:50:`Magento|CatalogWidget|Model|Rule|Condition|Product`;s:9:`attribute`;s:12:`category_ids`;s:8:`operator`;s:2:`==`;s:5:`value`;s:1:`5`;]s:4:`1--2`;a:4:[s:4:`type`;s:50:`Magento|CatalogWidget|Model|Rule|Condition|Product`;s:9:`attribute`;s:3:`new`;s:8:`operator`;s:2:`==`;s:5:`value`;s:1:`1`;]]"}}</div>
+</div>
+</div>
+</div>
+<!--BLOG-->
+<div style="background-color: #fff; padding-top: 62px;">
+<div class="container">{{widget type="MGS\Blog\Block\Widget\Lastest" title="Latest From Blogs" number_of_posts="3" show_thumbnail="1" thumbnail_width="240" thumbnail_height="180" show_short_content="1" limit_characters_short_content="150" view_as="owl_carousel" items="2" navigation="1" template="widget/default.phtml"}} <!--BRANDS--><hr style="margin-bottom: 0; margin-top: 70px;" />{{widget type="MGS\Brand\Block\Widget\Brand" brand_ids="1,2,3,4,5,6" view_as="owl_carousel" items="5" image_width="240" image_height="170" autoplay="1" template="widget/default.phtml"}}</div>
+</div>]]></content>
+	</cms_page>
+	
+	<promo_banner>
+		<item>
+			<title>Fashion Shoes</title>
+			<filename>/b/a/banner_shop_3_2.jpg</filename>
+			<url><![CDATA[]]></url>
+			<button><![CDATA[]]></button>
+			<text_align>top-left</text_align>
+			<content><![CDATA[<div class="title-block">
+<span style="font-size: 20px;" class="h3">FASHION SHOES
+</span></div>]]></content>
+			<effect>zoom</effect>
+			<custom_class><![CDATA[]]></custom_class>
+			<status>1</status>
+			<identifier>fashion_shoes</identifier>
+		</item>
+		<item>
+			<title>Fashion Bag</title>
+			<filename>/b/a/banner_shop_3_3.jpg</filename>
+			<url><![CDATA[]]></url>
+			<button><![CDATA[]]></button>
+			<text_align>top-left</text_align>
+			<content><![CDATA[<div class="title-block">
+<span style="font-size: 20px;" class="h3">FASHION BAGS
+</span></div>]]></content>
+			<effect>zoom</effect>
+			<custom_class><![CDATA[]]></custom_class>
+			<status>1</status>
+			<identifier>fashion_bag</identifier>
+		</item>
+		<item>
+			<title>Fashion Glass</title>
+			<filename>/p/r/prm_fashion_glass.jpg</filename>
+			<url><![CDATA[]]></url>
+			<button><![CDATA[]]></button>
+			<text_align>top-left</text_align>
+			<content><![CDATA[<div class="title-block">
+<span style="font-size: 20px;" class="h3">FASHION WATCHES</span>
+</div>]]></content>
+			<effect>zoom</effect>
+			<custom_class><![CDATA[]]></custom_class>
+			<status>1</status>
+			<identifier>fashion_glass</identifier>
+		</item>
+		<item>
+			<title>Fashion Watch</title>
+			<filename>/p/r/prm_fashion_watch.jpg</filename>
+			<url><![CDATA[]]></url>
+			<button><![CDATA[]]></button>
+			<text_align>top-left</text_align>
+			<content><![CDATA[<div class="title-block">
+<span style="font-size: 20px;" class="h3">FASHION WATCHES</span>
+</div>]]></content>
+			<effect>zoom</effect>
+			<custom_class><![CDATA[]]></custom_class>
+			<status>1</status>
+			<identifier>fashion_watch</identifier>
+		</item>
+	</promo_banner>
+	
+	<theme_setting>
+		<custom_style>
+			<style><![CDATA[.header .setting-dropdown .action, .header .account-dropdown .action, .header .minicart-wrapper .action, .header .social-login-options .action {
+color: #6a6a6a;
+}
+.header .position-abs {
+position: static;
+}
+.header .btn-responsive-nav {
+color: #222;
+}
+@media(max-width: 991px) {
+.header .navigation a.level0 {
+color:#fff !important;
+}}
+.header .header-v1 .sticky-content {
+background-color: #fff;}]]></style>
+		</custom_style>
+		<banner_slider>
+			<identifier_block><![CDATA[boxed_slider_home_5]]></identifier_block>
+		</banner_slider>
+	</theme_setting>
+	<color_setting>
+		<header>
+			<header_custom>1</header_custom>
+			<middle_background><![CDATA[#ffffff]]></middle_background>
+			<lv1_color><![CDATA[#5d5d5d]]></lv1_color>
+			<lv1_color_hover><![CDATA[#252525]]></lv1_color_hover>
+		</header>
+	</color_setting>
+</home>

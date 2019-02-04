@@ -1,0 +1,22 @@
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php /** @var $block \Magento\Catalog\Block\Product\AbstractProduct */ ?>
+<?php $_helper = $this->helper('Magento\Catalog\Helper\Output'); ?>
+<?php $themeHelper = $this->helper('MGS\Mpanel\Helper\Data'); ?>
+<?php if($themeHelper->getCountRelatedProduct($block->getProduct())): ?>
+	<?php 
+		$html = $this->getLayout()
+			->createBlock('Magento\Catalog\Block\Product\ProductList\Related')
+			->setType('related')
+			->setTemplate('product/list/items.phtml')
+			->toHtml();
+		echo $html;
+	?>
+<?php endif ?>
